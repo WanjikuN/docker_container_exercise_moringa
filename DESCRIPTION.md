@@ -1,6 +1,6 @@
-#Docker Container
+# Docker Container
 
-##Steps
+## Steps
 
 * Fork and clone repo
     1. fork [repository](https://github.com/kadimasum/docker_container_exercise_moringa.git)
@@ -9,7 +9,8 @@
         git clone <git url>
 
         ```
-*Change directory into the cloned URL directory
+* Change directory into the cloned URL directory
+
         ```
         cd <dirname>
 
@@ -24,7 +25,7 @@ From settings.py , django4.1.7 is required
         ```
         touch requirements.txt
         ```
-*Code editor
+* Code editor
 We will be using Visual Studio
         ```
         code .
@@ -43,22 +44,24 @@ In order to make sure the app is running as it should
 
         ```
 * Update settings.py file
-Tweak allowed hosts to any
-Add '*'
+> Tweak allowed hosts to any
+    
+        ```
+         '*'
+        ```
+* Create a Dockerfile.
+Syntax used for this project
+    1. FROM
+    1. LABEL
+    1. WORKDIR
+    1. VOLUME 
+    1. COPY
+    1. RUN
+    1. ENV
+    1. EXPOSE
+    1. ENTRYPOINT
 
-* Create a Dockerfile
-        ##Syntax used for this project
-        * FROM
-        * LABEL
-        * WORKDIR
-        * VOLUME 
-        * COPY
-        * RUN
-        * ENV
-        * EXPOSE
-        * ENTRYPOINT
-
-    To check on volumes:
+ To check on volumes:
     ```
     sudo docker volume ls
     ```
@@ -68,9 +71,9 @@ Add '*'
         ```
 
 * Run a Container 
-8000 is the port number by default it is tcp port number
-<name> is the image name
--p is same as --publish
+> 8000 is the port number by default it is tcp port number.
+> name is the image name.
+> -p is same as --publish
 
         ```
         sudo docker run -p 8000:8000 <name>
@@ -81,10 +84,11 @@ Add '*'
         git commit -m "container docker_img:v1 using a Dockerfile"
         git push origin master
         ```
+---
 ## WSL/Ubuntu tweaks
-In order to access a network server in WSL/Ubuntu , run the following commands in your context.
+In order to access a network server in WSL/Ubuntu , run the following command in your context.
 Copy the network server name .
-From the browser : network-server:port
+> From the browser, network-server:port
 
         ```
         cat /etc/resolv.conf
